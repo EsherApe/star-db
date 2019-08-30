@@ -18,10 +18,10 @@ export default class ItemList extends Component {
   }
 
   renderItems(arr) {
-    const {onItemSelected, renderItem} = this.props;
+    const {onItemSelected, renderItem, children} = this.props;
     return arr.map(item => {
       const {id} = item;
-      const label = renderItem(item);
+      const label = children(item);
 
       return (
         <li className='list-group-item'
