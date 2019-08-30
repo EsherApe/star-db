@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import ItemList from "../item-list";
-import PersonDetails from "../person-details";
-import ErrorIndicator from "../error-indicator";
+import ItemDetails from "../item-details";
 import SwapiService from "../../services/swapi-service";
 import Row from "../row";
 import ErrorBoundary from "../error-boundary";
+import Record from '../item-details/record'
 
 class PeoplePage extends Component {
   swapiService = new SwapiService();
@@ -20,6 +20,8 @@ class PeoplePage extends Component {
   };
 
   render() {
+    const {getPerson, getPersonImage} = this.swapiService;
+
     const itemList = (
       <ErrorBoundary>
         <ItemList getData={this.swapiService.getAllPeople}
@@ -31,7 +33,13 @@ class PeoplePage extends Component {
 
     const personDetails = (
       <ErrorBoundary>
-        <PersonDetails personId={this.state.selectedPerson}/>
+        <ItemDetails itemId={this.state.selectedPerson}
+                     getData={getPerson}
+                     getImageUrl={getPersonImage}>
+          <Record field='gender' label='Gender'/>
+          <Record field='eyeColor' label='Eye Color'/>
+          <Record field='birthYear' label='Birth year'/>
+        </ItemDetails>
       </ErrorBoundary>
     );
 

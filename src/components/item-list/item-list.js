@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import SwapiService from "../../services/swapi-service";
 
 import './item-list.css';
 import Spinner from "../spinner";
@@ -18,7 +17,7 @@ export default class ItemList extends Component {
   }
 
   renderItems(arr) {
-    const {onItemSelected, renderItem, children} = this.props;
+    const {onItemSelected, children} = this.props;
     return arr.map(item => {
       const {id} = item;
       const label = children(item);
