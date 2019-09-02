@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 import './item-details.css';
-import Spinner from "../spinner";
 
 export default class ItemDetails extends Component {
 
@@ -42,7 +41,7 @@ export default class ItemDetails extends Component {
     const {item, image} = this.state;
     const {children} = this.props;
     if (!item) {
-      return <Spinner/>
+      return <span>select item</span>
     }
 
     return (
