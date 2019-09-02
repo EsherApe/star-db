@@ -6,9 +6,9 @@ import {withSwapiService} from "../hoc-helpers";
 const PlanetDetails = (props) => {
   return (
     <ItemDetails {...props}>
-      <Record field='gender' label='Gender'/>
-      <Record field='eyeColor' label='Eye Color'/>
-      <Record field='birthYear' label='Birth year'/>
+      <Record field='population' label='Population'/>
+      <Record field='rotationPeriod' label='Rotation Period'/>
+      <Record field='diameter' label='Diameter'/>
     </ItemDetails>
   )
 };
@@ -21,4 +21,4 @@ const mapMethodsToProps = (swapiService) => {
 }
 
 
-export default withSwapiService(PlanetDetails, mapMethodsToProps);
+export default withSwapiService(mapMethodsToProps)(PlanetDetails);
