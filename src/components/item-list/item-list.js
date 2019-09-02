@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './item-list.css';
-import {withData} from '../hoc-helpers';
 
 const ItemList = (props) => {
 
@@ -26,4 +25,4 @@ const ItemList = (props) => {
   );
 };
 
-export default withData(ItemList);
+export default ItemList;
