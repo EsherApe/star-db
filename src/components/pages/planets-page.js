@@ -5,7 +5,7 @@ import Row from "../row";
 class PlanetsPage extends Component {
 
   state = {
-    selectedItem: null
+    selectedItem: 2
   };
 
   onItemSelected = (selectedItem) => {

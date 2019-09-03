@@ -66,12 +66,10 @@ class RandomPlanet extends Component {
     const content = hasData ? <PlanetView planet={planet}/> : null;
 
     return (
-      <div className='col-12'>
-        <div className="random-planet jumbotron rounded">
-          {errorMessage}
-          {spinner}
-          {content}
-        </div>
+      <div className="random-planet jumbotron rounded">
+        {errorMessage}
+        {spinner}
+        {content}
       </div>
     );
   }
